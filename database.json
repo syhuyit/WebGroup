@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Lavi",
+      "category": "Nước",
+      "price": 10000,
+      "sales": "120",
+      "images": ""
+    },
+    {
+      "id": 2,
+      "name": "Hảo hảo",
+      "category": "Mì tôm",
+      "price": 5000,
+      "sales": "224",
+      "images": ""
+    }
+  ]
+}
