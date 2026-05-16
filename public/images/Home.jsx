@@ -9,15 +9,13 @@ function Home() {
         style={{
           height: "300px",
           background:
-          "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1400') center/cover no-repeat",
+            "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(...)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           color: "white",
-          fontSize: "45px",
+          fontSize: "30px",
           fontWeight: "bold",
-          textShadow: "2px 2px 8px rgba(0,0,0,0.6)",
-          letterSpacing: "2px",
         }}
       >
         🛒 Tạp Hóa Nhà Mình
@@ -28,7 +26,6 @@ function Home() {
         style={{
           textAlign: "center",
           padding: "40px 20px",
-          background: "#ffffff",
           animation: "fadeIn 1s ease-in",
         }}
       >
@@ -53,18 +50,16 @@ function Home() {
       {/* Giới thiệu */}
       <div
         style={{
-          background: "#e8f7f8",
+          background: "#f9f9f9",
           padding: "30px",
           textAlign: "center",
         }}
       >
         <h3>Về chúng tôi</h3>
         <p>
-         Tạp Hóa Nhà Mình — nơi bạn tìm thấy mọi thứ cần thiết cho cuộc sống
-         hàng ngày. Từ nước giải khát, mì tôm, bánh kẹo đến gia vị và thực phẩm
-         thiết yếu, tất cả đều được chọn lọc kỹ càng với chất lượng đảm bảo và
-         giá cả phải chăng. Mua sắm dễ dàng, giao hàng nhanh chóng — chúng tôi
-         luôn ở đây để phục vụ bạn mỗi ngày! 🛒
+          Tạp Hóa Nhà Mình cung cấp đầy đủ các mặt hàng thiết yếu từ nước
+          giải khát, mì tôm, bánh kẹo đến gia vị — chất lượng đảm bảo, giá
+          cả phải chăng, phù hợp cho mọi gia đình.
         </p>
       </div>
     </div>

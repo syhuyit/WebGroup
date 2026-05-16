@@ -1,0 +1,229 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Nước khoáng La Vie 500ml",
+      "category": "Đồ uống",
+      "description": "Nước khoáng thiên nhiên, bổ sung khoáng chất thiết yếu cho cơ thể mỗi ngày.",
+      "price": 5000,
+      "sales": 150,
+      "image": "/images/lavie.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Nước ngọt Coca Cola 320ml",
+      "category": "Đồ uống",
+      "description": "Nước giải khát có gas hương vị sảng khoái, bùng nổ năng lượng.",
+      "price": 10000,
+      "sales": 320,
+      "image": "/images/coca.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Nước tăng lực Sting dâu 320ml",
+      "category": "Đồ uống",
+      "description": "Nước tăng lực hương dâu đỏ, giúp tỉnh táo và tiếp thêm sức mạnh.",
+      "price": 11000,
+      "sales": 280,
+      "image": "/images/sting dau.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Trà xanh Không Độ 455ml",
+      "category": "Đồ uống",
+      "description": "Chiết xuất từ lá trà tươi, giúp giải nhiệt và chống oxy hóa.",
+      "price": 9000,
+      "sales": 190,
+      "image": "/images/tra-xanh-khong-do.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Bia Tiger lon 330ml",
+      "category": "Đồ uống",
+      "description": "Bia lager cao cấp, hương vị đậm đà, sảng khoái trong mọi cuộc vui.",
+      "price": 19000,
+      "sales": 500,
+      "image": "/images/bia-tiger.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Mì Hảo hảo tôm chua cay",
+      "category": "Thực phẩm khô",
+      "description": "Mì ăn liền hương vị tôm chua cay huyền thoại, sợi mì dai ngon.",
+      "price": 4500,
+      "sales": 1200,
+      "image": "/images/my-haohao.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Mì trộn Omachi Xốt Spaghetti",
+      "category": "Thực phẩm khô",
+      "description": "Mì khoai tây cao cấp kết hợp nước xốt bò bằm Spaghetti đậm đà phong cách Ý.",
+      "price": 8500,
+      "sales": 450,
+      "image": "/images/mitron-omachi.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Dầu ăn Neptune Light 1L",
+      "category": "Thực phẩm khô",
+      "description": "Sự kết hợp hoàn hảo giữa dầu gạo, dầu đậu nành và dầu hướng dương.",
+      "price": 55000,
+      "sales": 110,
+      "image": "/images/dauan.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Nước mắm Chinsu cá hồi",
+      "category": "Thực phẩm khô",
+      "description": "Nước mắm hương cá hồi đậm đà, giúp món ăn thêm phần thơm ngon hấp dẫn.",
+      "price": 42000,
+      "sales": 300,
+      "image": "/images/nuocmam.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Hạt nêm Knorr thịt thăn 400g",
+      "category": "Thực phẩm khô",
+      "description": "Chiết xuất từ thịt thăn và xương ống, mang lại vị ngọt thanh tự nhiên.",
+      "price": 48000,
+      "sales": 250,
+      "image": "/images/hatnem.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Snack khoai tây Lay's vị tự nhiên",
+      "category": "Bánh kẹo",
+      "description": "Lát khoai tây tươi chọn lọc, chiên vàng giòn rụm với vị muối biển.",
+      "price": 12000,
+      "sales": 600,
+      "image": "/images/snackkhoaitay.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Bánh quy Oreo nhân kem vani",
+      "category": "Bánh kẹo",
+      "description": "Bánh quy socola kẹp kem vani thơm ngon, hoàn hảo khi kết hợp cùng sữa.",
+      "price": 18000,
+      "sales": 420,
+      "image": "/images/banhoreo.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Kẹo gum Mentos bạc hà",
+      "category": "Bánh kẹo",
+      "description": "Kẹo cao su không đường, mang lại hơi thở thơm mát tức thì.",
+      "price": 5000,
+      "sales": 800,
+      "image": "/images/keo-ngam-khong-duong-mentos.png"
+    },
+    {
+      "id": 14,
+      "name": "Socola KitKat 4 thanh",
+      "category": "Bánh kẹo",
+      "description": "Bánh xốp giòn tan bao phủ lớp socola sữa ngọt ngào, nghỉ ngơi xơi KitKat.",
+      "price": 15000,
+      "sales": 370,
+      "image": "/images/socola-kit-kat.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Thạch trái cây New Choice",
+      "category": "Bánh kẹo",
+      "description": "Thạch rau câu nhiều hương vị trái cây, dai giòn thanh mát.",
+      "price": 25000,
+      "sales": 150,
+      "image": "/images/keo-thach-but-chi.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Sữa tươi Vinamilk 180ml",
+      "category": "Sữa & Chế phẩm",
+      "description": "Sữa tươi 100% nguyên chất có đường, cung cấp canxi và vitamin.",
+      "price": 8000,
+      "sales": 950,
+      "image": "/images/suatuoi.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Sữa chua Vinamilk có đường",
+      "category": "Sữa & Chế phẩm",
+      "description": "Sữa chua lên men tự nhiên, tốt cho hệ tiêu hóa và làn da.",
+      "price": 6000,
+      "sales": 1100,
+      "image": "/images/suachua.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Sữa đặc Ông Thọ đỏ",
+      "category": "Sữa & Chế phẩm",
+      "description": "Sữa đặc có đường thơm béo, lý tưởng để pha cà phê hoặc chấm bánh mì.",
+      "price": 25000,
+      "sales": 520,
+      "image": "/images/suadac.jpg"
+    },
+    {
+      "id": 19,
+      "name":"Phô mai lát Zott Sandwich",
+      "category": "Sữa & Chế phẩm",
+      "description": "Phô mai miếng mềm mịn, giàu dinh dưỡng cho bữa sáng.",
+      "price": 35000,
+      "sales": 180,
+      "image": "/images/pho-mai-lat.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Bơ thực vật Tường An",
+      "category": "Sữa & Chế phẩm",
+      "description": "Bơ thực vật thơm ngon, thích hợp để nấu ăn và làm bánh.",
+      "price": 12000,
+      "sales": 210,
+      "image": "/images/bothucvat.jpg"
+    },
+    {
+      "id": 21,
+      "name": "Dầu gội Clear bạc hà 350g",
+      "category": "Hóa mỹ phẩm",
+      "description": "Dầu gội sạch gàu với tinh chất bạc hà, mang lại cảm giác mát lạnh.",
+      "price": 55000,
+      "sales": 400,
+      "image": "/images/dau-goi-clear.jpg"
+    },
+    {
+      "id": 22,
+      "name": "Kem đánh răng P/S bảo vệ 123",
+      "category": "Hóa mỹ phẩm",
+      "description": "Giúp ngăn ngừa sâu răng, làm trắng răng và giữ hơi thở thơm mát.",
+      "price": 32000,
+      "sales": 650,
+      "image": "/images/kem-danh-rang.jpg"
+    },
+    {
+      "id": 23,
+      "name": "Nước rửa chén Sunlight Chanh",
+      "category": "Hóa mỹ phẩm",
+      "description": "Đánh bay dầu mỡ nhanh chóng với sức mạnh từ chanh tươi.",
+      "price": 28000,
+      "sales": 880,
+      "image": "/images/nuoc-rua-chen-sunlight.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Bột giặt OMO 700g",
+      "category": "Hóa mỹ phẩm",
+      "description": "Hệ bọt thông minh xoáy bay vết bẩn cứng đầu chỉ trong 1 lần giặt.",
+      "price": 45000,
+      "sales": 320,
+      "image": "/images/bot-giat-omo.jpg"
+    },
+    {
+      "id": 25,
+      "name": "Khăn giấy khô Bless You",
+      "category": "Hóa mỹ phẩm",
+      "description": "Khăn giấy lụa mềm mại, không gây kích ứng da, thấm hút tốt.",
+      "price": 20000,
+      "sales": 950,
+      "image": "/images/khan-softpack.jpg"
+    }
+  ]
+}
