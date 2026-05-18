@@ -46,7 +46,7 @@ function Dashboard() {
             <tr key={p.id}>
               <td>#{p.id}</td>
               <td>
-                <img src={p.image} alt="" />
+                <img src={p.image} alt="" width={50} />
               </td>
               <td>{p.name}</td>
               <td>{p.category}</td>
