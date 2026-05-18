@@ -25,7 +25,7 @@ function ProductList() {
 
 
     useEffect(() => {
-        fetch("")
+        fetch("http://localhost:9999")
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data);
