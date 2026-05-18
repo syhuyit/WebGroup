@@ -40,7 +40,7 @@ function Home() {
         <button
           onClick={() => navigate("/menu")}
           style={{
-            background: "#56B6C6",
+            background: "#000000",
             color: "white",
             border: "none",
             padding: "10px 20px",
