@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "../../css/Home.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -37,18 +38,7 @@ function Home() {
           Mua sắm hàng tạp hóa thiết yếu với giá cả phải chăng, giao hàng nhanh
           chóng
         </p>
-        <button
-          onClick={() => navigate("/menu")}
-          style={{
-            background: "#000000",
-            color: "white",
-            border: "none",
-            padding: "10px 20px",
-            borderRadius: "10px",
-            cursor: "pointer",
-            marginTop: "10px",
-          }}
-        >
+        <button onClick={() => navigate("/menu")} className="btn-buy">
           Mua ngay
         </button>
       </div>
