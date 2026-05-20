@@ -48,6 +48,16 @@ function Card({ product }) {
         >
           {product.price.toLocaleString("vi-VN")}đ
         </p>
+        <p
+          style={{
+            color: "#000000",
+            fontWeight: "bold",
+            fontSize: "20px",
+            margin: 0,
+          }}
+        >
+          {product.sales} lượt bán
+        </p>
       </div>
       <button onClick={handleAddToCart} className="add-btn">
         Thêm ngay
