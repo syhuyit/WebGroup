@@ -15,19 +15,19 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import Register from "./pages/Register";
 import Orders from "./pages/adminPages/Orders";
 import OrderDetail from "./pages/adminPages/OrderDetail";
+import AdminNavbar from "./components/AdminNavbar";
 
 function AppContent() {
   const { user } = useContext(AuthContext);
   const location = useLocation();
 
-  const hideNavbar =
-    location.pathname === "/login" ||
-    location.pathname === "/register" ||
-    user?.role === "admin";
+  const isAuthPage =
+    location.pathname === "/login" || location.pathname === "/register";
 
   return (
     <>
-      {!hideNavbar && <Navbar />}
+      {!isAuthPage && user?.role !== "admin" && <Navbar />}
+      {!isAuthPage && user?.role !== "user" && <AdminNavbar />}
 
       <Routes>
         <Route path="/login" element={<Login />} />
