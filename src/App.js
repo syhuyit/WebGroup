@@ -13,6 +13,8 @@ import { AuthContext } from "./context/AuthContext";
 import Login from "./pages/Login";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Register from "./pages/Register";
+import Orders from "./pages/adminPages/Orders";
+import OrderDetail from "./pages/adminPages/OrderDetail";
 
 function AppContent() {
   const { user } = useContext(AuthContext);
@@ -75,6 +77,22 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <UpdateProduct />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <Orders />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/detail/:id"
+          element={
+            <ProtectedRoute>
+              <OrderDetail />
             </ProtectedRoute>
           }
         />

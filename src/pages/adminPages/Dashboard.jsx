@@ -28,7 +28,11 @@ function Dashboard() {
       <p>{products.length} (sản phẩm)</p>
 
       <Link to={"/add"}>
-        <Button>Add Product</Button>
+        <Button>Thêm sản phẩm</Button>
+      </Link>
+
+      <Link to={"/orders"}>
+        <Button>Đơn hàng</Button>
       </Link>
 
       <Table bordered striped hover>

@@ -270,9 +270,42 @@
         }
       ],
       "total": 90000,
-      "status": "pending",
+      "status": "delivered",
       "orderDate": "2026-05-20T09:27:02.114Z",
       "id": 1
+    },
+    {
+      "userId": 2,
+      "customerName": "Nguyen Sy Huy",
+      "customerPhone": "0129292129",
+      "customerAddress": "Ho Guom Plaza",
+      "paymentMethod": "COD",
+      "items": [
+        {
+          "id": 25,
+          "name": "Khăn giấy khô Bless You",
+          "category": "Hóa mỹ phẩm",
+          "description": "Khăn giấy lụa mềm mại, không gây kích ứng da, thấm hút tốt.",
+          "price": 20000,
+          "sales": 950,
+          "image": "/images/khan-softpack.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "name": "Nước khoáng La Vie 500ml",
+          "category": "Đồ uống",
+          "description": "Nước khoáng thiên nhiên, bổ sung khoáng chất thiết yếu cho cơ thể mỗi ngày.",
+          "price": 5000,
+          "sales": 150,
+          "image": "/images/lavie.jpg",
+          "quantity": 3
+        }
+      ],
+      "total": 35000,
+      "status": "pending",
+      "orderDate": "2026-05-20T14:26:32.175Z",
+      "id": 2
     }
   ]
 }
