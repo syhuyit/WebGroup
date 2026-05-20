@@ -239,5 +239,40 @@
       "password": "123",
       "role": "user"
     }
+  ],
+  "orders": [
+    {
+      "userId": 2,
+      "customerName": "Lê Văn Hiếu",
+      "customerPhone": "0123456789",
+      "customerAddress": "Hà Nội",
+      "paymentMethod": "Vietcombank",
+      "items": [
+        {
+          "id": 9,
+          "name": "Nước mắm Chinsu cá hồi",
+          "category": "Thực phẩm khô",
+          "description": "Nước mắm hương cá hồi đậm đà, giúp món ăn thêm phần thơm ngon hấp dẫn.",
+          "price": 42000,
+          "sales": 300,
+          "image": "/images/nuocmam.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 10,
+          "name": "Hạt nêm Knorr thịt thăn 400g",
+          "category": "Thực phẩm khô",
+          "description": "Chiết xuất từ thịt thăn và xương ống, mang lại vị ngọt thanh tự nhiên.",
+          "price": 48000,
+          "sales": 250,
+          "image": "/images/hatnem.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 90000,
+      "status": "pending",
+      "orderDate": "2026-05-20T09:27:02.114Z",
+      "id": 1
+    }
   ]
 }
