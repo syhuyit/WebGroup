@@ -3,10 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/userPages/Home";
 import Menu from "./pages/userPages/Menu";
-<<<<<<< HEAD
-=======
 import Checkout from "./pages/userPages/Checkout";
->>>>>>> feature/Checkout
 import AddProduct from "./pages/adminPages/AddProduct";
 import UpdateProduct from "./pages/adminPages/UpdateProduct";
 import Dashboard from "./pages/adminPages/Dashboard";
@@ -56,8 +53,8 @@ function AppContent() {
               <Checkout />
             </ProtectedRoute>
           }
-          />
-          <Route
+        />
+        <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
