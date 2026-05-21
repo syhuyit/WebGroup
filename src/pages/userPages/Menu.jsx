@@ -48,7 +48,9 @@ function Menu() {
         fontFamily: "'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
       }}
     >
+
       {/* Phần bộ lọc và tìm kiếm */}
+
       <div
         className="filter-header-section"
         style={{
@@ -67,7 +69,9 @@ function Menu() {
             gap: "20px",
           }}
         >
+
           {/* Dòng tiêu đề và ô tìm kiếm */}
+
           <div
             style={{
               display: "flex",
@@ -99,7 +103,7 @@ function Menu() {
               </p>
             </div>
 
-            {/* Ô tìm kiếm */}
+            {/* Ô tìm ki0ếm */}
             <div
               style={{
                 position: "relative",
