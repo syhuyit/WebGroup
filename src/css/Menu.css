@@ -1,0 +1,49 @@
+.menu-main-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  align-items: flex-start;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.menu-cart-sidebar {
+  width: 350px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 20px;
+}
+
+.menu-products-column {
+  flex: 1;
+}
+
+@media (max-width: 991px) {
+  .menu-main-layout {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  .menu-cart-sidebar {
+    width: 100%;
+    position: static;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter-header-section {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.product-item-wrapper {
+  animation: fadeIn 0.3s ease-out;
+}
