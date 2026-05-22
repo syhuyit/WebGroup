@@ -7,8 +7,8 @@ function Orders() {
   const [orders, setOrders] = useState([]);
 
   const fetchOrders = async () => {
-    const response = await getOrders();
-    setOrders(response);
+    const res = await getOrders();
+    setOrders(res);
   };
   useEffect(() => {
     fetchOrders();

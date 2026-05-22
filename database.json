@@ -238,6 +238,12 @@
       "username": "huy",
       "password": "123",
       "role": "user"
+    },
+    {
+      "username": "huythu2",
+      "password": "123456",
+      "role": "user",
+      "id": 3
     }
   ],
   "orders": [
