@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getOrders } from "../../config/orderAPI";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Badge } from "react-bootstrap";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -33,7 +33,11 @@ function Orders() {
               <td>#{order.userId}</td>
               <td>{order.orderDate}</td>
               <td>{order.total}</td>
-              <td>{order.status}</td>
+              <td>
+                <Badge bg={order.status === "pending" ? "warning" : "success"}>
+                  {order.status}
+                </Badge>
+              </td>
               <td>
                 <Link to={`/detail/${order.id}`}>
                   <Button>Chi tiết đơn hàng</Button>

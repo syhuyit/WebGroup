@@ -35,7 +35,7 @@ function UpdateProduct() {
     e.preventDefault();
     try {
       await updateProduct(id, product);
-      navigate("/");
+      navigate("/dashboard");
       window.alert("Sửa sản phẩm thành công");
     } catch (error) {
       console.log(error);

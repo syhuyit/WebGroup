@@ -94,7 +94,6 @@ function OrderDetail() {
                 </Badge>
               </p>
 
-              {/* Nút Giao hàng: Chỉ hiển thị nếu đơn hàng đang ở trạng thái chưa xử lý (pending) */}
               {order.status === "pending" && (
                 <Button
                   variant="primary"

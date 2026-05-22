@@ -32,7 +32,7 @@ function AdminNavbar() {
           to="/dashboard"
           className="fw-bold text-warning fs-4 d-flex align-items-center"
         >
-          <span className="me-2">⚙️</span> ADMIN
+          ADMIN
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="admin-navbar-nav" />

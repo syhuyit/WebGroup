@@ -8,7 +8,7 @@ function AddProduct() {
     name: "",
     category: "",
     price: "",
-    sales: "",
+    sales: 0,
     image: "",
   });
 
@@ -25,9 +25,14 @@ function AddProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await addProduct();
-      navigate("/");
+      const productData = {
+        ...product,
+        price: Number(product.price),
+        sales: Number(product.sales),
+      };
+      await addProduct(productData);
       window.alert("Thêm sản phẩm thành công");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
       window.alert("Thêm sản phẩm thất bại");
@@ -36,13 +41,6 @@ function AddProduct() {
 
   return (
     <div>
-      <Button
-        variant="secondary"
-        className="mb-3"
-        onClick={() => navigate("/dashboard")}
-      >
-        ← Quay lại
-      </Button>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Form.Label>Tên</Form.Label>
@@ -85,7 +83,6 @@ function AddProduct() {
             name="sales"
             value={product.sales}
             onChange={handleChange}
-            defaultValue={0}
             placeholder="Nhập lượt bán..."
           />
         </Form.Group>
