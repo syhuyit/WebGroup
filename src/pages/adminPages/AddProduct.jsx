@@ -36,6 +36,13 @@ function AddProduct() {
 
   return (
     <div>
+      <Button
+        variant="secondary"
+        className="mb-3"
+        onClick={() => navigate("/dashboard")}
+      >
+        ← Quay lại
+      </Button>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Form.Label>Tên</Form.Label>
