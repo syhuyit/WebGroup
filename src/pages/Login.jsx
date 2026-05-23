@@ -48,16 +48,37 @@ function Login() {
         }}
       >
         {/* TITLE */}
+        <div style={{ 
+          display: "flex", 
+          flexDirection: "column", 
+          alignItems: "center", 
+          justifyContent: "center",
+          width: "100%",
+          marginBottom: "20px" 
+      }}>
         <h2
           style={{
-            textAlign: "center",
-            marginBottom: "20px",
-            color: "#000000",
-          }}
-        >
-          Tạp hóa abc
+            color: "#D4AF37",
+            margin: 0,
+            fontWeight: "800",
+            letterSpacing: "1px",
+            fontSize: "24px",
+            lineHeight: "1.2"
+         }}
+        >OMNI
         </h2>
-
+          <span
+            style={{
+                color: "#A99260",
+                fontSize: "12px",
+                fontWeight: "600",
+                letterSpacing: "3px",
+                textAlign: "center",
+                display: "block" 
+            }}
+        >— MART —
+          </span>
+      </div>
         {/* ROLE */}
         <div
           style={{
