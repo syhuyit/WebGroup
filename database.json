@@ -224,7 +224,17 @@
       "price": 20000,
       "sales": 950,
       "image": "/images/khan-softpack.jpg"
+    },
+    {
+      "id": 26,
+      "name": "Nước giặt hương hoa Hồng Ariel 1.8L",
+      "category": "Hóa mỹ phẩm",
+      "description": "Nước giặt hương hoa hồng, làm sạch hiệu quả và để lại mùi thơm dễ chịu.",
+      "price": 150000,
+      "sales": 234,
+      "image": "/images/nuoc-giat-ariel.jpg"
     }
+
   ],
   "users": [
     {
