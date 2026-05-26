@@ -8,6 +8,10 @@ function Menu() {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Tất cả");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [pricePreset, setPricePreset] = useState("all");
+  const [sortBy, setSortBy] = useState("default");
 
   const fetchProducts = async () => {
     const res = await getProducts();
@@ -24,19 +28,73 @@ function Menu() {
     ...new Set(products.map((p) => p.category).filter(Boolean)),
   ];
 
-  // Lọc sản phẩm theo thể loại và tên tìm kiếm
+  // Xử lý khi chọn khoảng giá định sẵn
+  const handlePricePresetChange = (preset) => {
+    setPricePreset(preset);
+    if (preset === "all") {
+      setMinPrice("");
+      setMaxPrice("");
+    } else if (preset === "under10") {
+      setMinPrice("");
+      setMaxPrice("10000");
+    } else if (preset === "10to50") {
+      setMinPrice("10000");
+      setMaxPrice("50000");
+    } else if (preset === "over50") {
+      setMinPrice("50000");
+      setMaxPrice("");
+    }
+  };
+
+  // Xử lý khi nhập giá tự chọn
+  const handleMinPriceChange = (val) => {
+    setMinPrice(val);
+    setPricePreset("custom");
+  };
+
+  const handleMaxPriceChange = (val) => {
+    setMaxPrice(val);
+    setPricePreset("custom");
+  };
+
+  // Lọc sản phẩm theo thể loại, tên tìm kiếm và khoảng giá
   const filteredProducts = products.filter((product) => {
     const matchesCategory =
       selectedCategory === "Tất cả" || product.category === selectedCategory;
     const matchesSearch = product.name
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    const matchesMinPrice =
+      minPrice === "" || product.price >= parseFloat(minPrice);
+    const matchesMaxPrice =
+      maxPrice === "" || product.price <= parseFloat(maxPrice);
+    return matchesCategory && matchesSearch && matchesMinPrice && matchesMaxPrice;
+  });
+
+  // Sắp xếp sản phẩm theo tên và giá cả
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sortBy === "nameAsc") {
+      return a.name.localeCompare(b.name, "vi");
+    }
+    if (sortBy === "nameDesc") {
+      return b.name.localeCompare(a.name, "vi");
+    }
+    if (sortBy === "priceAsc") {
+      return a.price - b.price;
+    }
+    if (sortBy === "priceDesc") {
+      return b.price - a.price;
+    }
+    return 0;
   });
 
   const handleResetFilters = () => {
     setSearchQuery("");
     setSelectedCategory("Tất cả");
+    setMinPrice("");
+    setMaxPrice("");
+    setPricePreset("all");
+    setSortBy("default");
   };
 
   return (
@@ -48,9 +106,7 @@ function Menu() {
         fontFamily: "'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
       }}
     >
-
       {/* Phần bộ lọc và tìm kiếm */}
-
       <div
         className="filter-header-section"
         style={{
@@ -69,9 +125,7 @@ function Menu() {
             gap: "20px",
           }}
         >
-
           {/* Dòng tiêu đề và ô tìm kiếm */}
-
           <div
             style={{
               display: "flex",
@@ -103,7 +157,7 @@ function Menu() {
               </p>
             </div>
 
-            {/* Ô tìm ki0ếm */}
+            {/* Ô tìm kiếm */}
             <div
               style={{
                 position: "relative",
@@ -254,6 +308,142 @@ function Menu() {
               })}
             </div>
           </div>
+
+          <hr style={{ margin: "10px 0", borderColor: "#f0f0f0" }} />
+
+          {/* Hàng lọc giá tiền và sắp xếp */}
+
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              gap: "25px",
+              alignItems: "flex-start",
+            }}
+          >
+            {/* Lọc giá */}
+            <div style={{ flex: "1 1 500px" }}>
+              <span
+                style={{
+                  display: "block",
+                  fontSize: "14px",
+                  fontWeight: "700",
+                  color: "#555",
+                  marginBottom: "12px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                }}
+              >
+                Lọc theo giá tiền:
+              </span>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                  gap: "15px",
+                }}
+              >
+                {/* Ô nhập giá tự chọn */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <input
+                    type="number"
+                    placeholder="Min (đ)"
+                    min="0"
+                    max="1000000"
+                    step="5000"
+                    value={minPrice}
+                    onChange={(e) => handleMinPriceChange(e.target.value)}
+                    style={{
+                      width: "110px",
+                      padding: "6px 12px",
+                      fontSize: "13px",
+                      borderRadius: "15px",
+                      border: "1px solid #e0e0e0",
+                      outline: "none",
+                      transition: "all 0.2s ease",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#D4AF37")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
+                  />
+                  <span style={{ color: "#aaa", fontSize: "13px" }}>-</span>
+                  <input
+                    type="number"
+                    placeholder="Max (đ)"
+                    min="0"
+                    max="1000000"
+                    step="5000"
+                    value={maxPrice}
+                    onChange={(e) => handleMaxPriceChange(e.target.value)}
+                    style={{
+                      width: "110px",
+                      padding: "6px 12px",
+                      fontSize: "13px",
+                      borderRadius: "15px",
+                      border: "1px solid #e0e0e0",
+                      outline: "none",
+                      transition: "all 0.2s ease",
+                    }}
+                    onFocus={(e) => (e.target.style.borderColor = "#D4AF37")}
+                    onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Sắp xếp */}
+            <div style={{ width: "250px" }}>
+              <span
+                style={{
+                  display: "block",
+                  fontSize: "14px",
+                  fontWeight: "700",
+                  color: "#555",
+                  marginBottom: "12px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                }}
+
+              >Sắp xếp theo:
+              </span>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                style={{
+                  width: "100%",
+                  padding: "8px 16px",
+                  fontSize: "14px",
+                  fontWeight: "600",
+                  borderRadius: "15px",
+                  border: "1.5px solid #e0e0e0",
+                  outline: "none",
+                  background: "#ffffff",
+                  cursor: "pointer",
+                  color: "#444444",
+                  transition: "all 0.2s ease",
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = "#D4AF37";
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = "#e0e0e0";
+                }}
+              >
+                <option value="default">Mặc định</option>
+                <option value="nameAsc">Tên: A → Z</option>
+                <option value="nameDesc">Tên: Z → A</option>
+                <option value="priceAsc">Giá từ Thấp đến Cao</option>
+                <option value="priceDesc">Giá từ Cao đến Thấp</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -261,7 +451,7 @@ function Menu() {
       <div className="menu-main-layout">
         {/* Cột sản phẩm */}
         <div className="menu-products-column">
-          {filteredProducts.length > 0 ? (
+          {sortedProducts.length > 0 ? (
             <div
               style={{
                 display: "grid",
@@ -269,7 +459,7 @@ function Menu() {
                 gap: "25px",
               }}
             >
-              {filteredProducts.map((item) => (
+              {sortedProducts.map((item) => (
                 <div key={item.id} className="product-item-wrapper">
                   <Card product={item} />
                 </div>
@@ -300,10 +490,7 @@ function Menu() {
                 Không tìm thấy sản phẩm nào!
               </h4>
               <p style={{ color: "#777", fontSize: "15px", marginTop: "8px" }}>
-                Không có sản phẩm nào khớp với từ khóa "
-                <strong style={{ color: "#111" }}>{searchQuery}</strong>" trong
-                thể loại "
-                <strong style={{ color: "#111" }}>{selectedCategory}</strong>".
+                Không có sản phẩm nào trùng khớp với bộ lọc của bạn! 
               </p>
               <button
                 onClick={handleResetFilters}
