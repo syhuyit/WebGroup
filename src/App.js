@@ -16,6 +16,8 @@ import Register from "./pages/Register";
 import Orders from "./pages/adminPages/Orders";
 import OrderDetail from "./pages/adminPages/OrderDetail";
 import AdminNavbar from "./components/AdminNavbar";
+import ProductDetail from "./pages/userPages/ProductDetail";
+import Users from "./pages/adminPages/Users";
 
 function AppContent() {
   const { user } = useContext(AuthContext);
@@ -57,6 +59,14 @@ function AppContent() {
           }
         />
         <Route
+          path="/product/:id"
+          element={
+            <ProtectedRoute>
+              <ProductDetail />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
@@ -93,6 +103,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <OrderDetail />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/users"
+          element={
+            <ProtectedRoute>
+              <Users />
             </ProtectedRoute>
           }
         />

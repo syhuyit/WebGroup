@@ -58,6 +58,15 @@ function AdminNavbar() {
             >
               ➕ Thêm sản phẩm
             </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/users"
+              className={({ isActive }) =>
+                isActive ? "text-warning fw-bold nav-link" : "nav-link"
+              }
+            >
+              Quản lý người dùng
+            </Nav.Link>
           </Nav>
 
           <Nav className="align-items-center gap-3">

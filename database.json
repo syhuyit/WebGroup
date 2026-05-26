@@ -168,7 +168,7 @@
       "category": "Sữa & Chế phẩm",
       "description": "Phô mai miếng mềm mịn, giàu dinh dưỡng cho bữa sáng.",
       "price": 35000,
-      "sales": 180,
+      "sales": "181",
       "image": "/images/pho-mai-lat.jpg"
     },
     {
@@ -237,13 +237,15 @@
       "id": 2,
       "username": "huy",
       "password": "123",
-      "role": "user"
+      "role": "user",
+      "active": "true"
     },
     {
+      "id": 3,
       "username": "huythu2",
       "password": "123456",
       "role": "user",
-      "id": 3
+      "active": "true"
     }
   ],
   "orders": [
@@ -342,7 +344,7 @@
         }
       ],
       "total": 50000,
-      "status": "pending",
+      "status": "delivered",
       "orderDate": "2026-05-22T02:32:54.937Z",
       "id": 3
     },

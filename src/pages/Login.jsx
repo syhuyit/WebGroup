@@ -18,6 +18,10 @@ function Login() {
       alert("Sai tài khoản hoặc mật khẩu!");
       return;
     }
+    if (foundUser.active === "false") {
+      alert("Tài khoản của bạn đã bị khóa! Vui lòng liên hệ với Admin!");
+      return;
+    }
     login(foundUser);
 
     if (foundUser.role === "admin") {
@@ -48,37 +52,41 @@ function Login() {
         }}
       >
         {/* TITLE */}
-        <div style={{ 
-          display: "flex", 
-          flexDirection: "column", 
-          alignItems: "center", 
-          justifyContent: "center",
-          width: "100%",
-          marginBottom: "20px" 
-      }}>
-        <h2
+        <div
           style={{
-            color: "#D4AF37",
-            margin: 0,
-            fontWeight: "800",
-            letterSpacing: "1px",
-            fontSize: "24px",
-            lineHeight: "1.2"
-         }}
-        >OMNI
-        </h2>
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+            marginBottom: "20px",
+          }}
+        >
+          <h2
+            style={{
+              color: "#D4AF37",
+              margin: 0,
+              fontWeight: "800",
+              letterSpacing: "1px",
+              fontSize: "24px",
+              lineHeight: "1.2",
+            }}
+          >
+            OMNI
+          </h2>
           <span
             style={{
-                color: "#A99260",
-                fontSize: "12px",
-                fontWeight: "600",
-                letterSpacing: "3px",
-                textAlign: "center",
-                display: "block" 
+              color: "#A99260",
+              fontSize: "12px",
+              fontWeight: "600",
+              letterSpacing: "3px",
+              textAlign: "center",
+              display: "block",
             }}
-        >— MART —
+          >
+            — MART —
           </span>
-      </div>
+        </div>
         {/* ROLE */}
         <div
           style={{

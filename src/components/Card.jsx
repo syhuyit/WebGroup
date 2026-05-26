@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import "../css/Card.css";
 
@@ -12,12 +12,14 @@ function Card({ product }) {
 
   return (
     <div className="product-card">
-      <img
-        className="product-image"
-        src={product.image}
-        alt={product.name}
-        onClick={() => navigate(`/product/${product.id}`)}
-      />
+      <Link to={`/product/${product.id}`}>
+        <img
+          className="product-image"
+          src={product.image}
+          alt={product.name}
+          onClick={() => navigate(`/product/${product.id}`)}
+        />
+      </Link>
       <div
         style={{
           minHeight: "60px",
