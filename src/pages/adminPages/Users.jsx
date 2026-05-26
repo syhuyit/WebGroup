@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { getUsers, updateUser } from "../../config/userAPI";
 import { Button, Table } from "react-bootstrap";
 
 function Users() {
   const [users, setUsers] = useState([]);
-  const navigate = useNavigate();
 
   const fetchUsers = async () => {
     const res = await getUsers();
@@ -72,14 +70,16 @@ function Users() {
               <td>{user.role}</td>
               <td>{user.active}</td>
               <td>
-                {user.active === "true" && (
-                  <Button onClick={() => handleLock(user)} variant="danger">
-                    LOCK
-                  </Button>
-                )}
-                {user.active === "false" && (
-                  <Button onClick={() => handleUnlock(user)} variant="success">
-                    UNLOCK
+                {user.role !== "admin" && (
+                  <Button
+                    variant={user.active === "true" ? "danger" : "success"}
+                    onClick={() =>
+                      user.active === "true"
+                        ? handleLock(user)
+                        : handleUnlock(user)
+                    }
+                  >
+                    {user.active === "true" ? "LOCK" : "UNLOCK"}
                   </Button>
                 )}
               </td>
