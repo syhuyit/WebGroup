@@ -6,13 +6,12 @@ function Home() {
   const navigate = useNavigate();
   const [saleProducts, setSaleProducts] = useState([]);
 
-  // Lấy sản phẩm từ database.json
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await fetch("http://localhost:9999/products");
         const data = await response.json();
-        // Lấy 4 sản phẩm bán chạy nhất làm sale
         const sorted = data.sort((a, b) => b.sales - a.sales).slice(0, 4);
         setSaleProducts(sorted);
       } catch (error) {
@@ -52,12 +51,10 @@ function Home() {
   return (
     <div className="home-container">
 
-      {/* BANNER */}
       <div className="banner">
         🛒 Tạp Hóa Nhà Mình
       </div>
 
-      {/* SLOGAN */}
       <div className="slogan-section">
         <h2>Tiện lợi mỗi ngày</h2>
         <p>Mua sắm hàng tạp hóa thiết yếu với giá cả phải chăng, giao hàng nhanh chóng</p>
@@ -66,7 +63,6 @@ function Home() {
         </button>
       </div>
 
-      {/* VOUCHER */}
       <section className="voucher-section">
         <h2 className="section-title">🎁 Voucher Ưu Đãi</h2>
         <div className="voucher-list">
@@ -92,7 +88,6 @@ function Home() {
         </div>
       </section>
 
-      {/* SẢN PHẨM SALE */}
       <section className="sale-section">
         <h2 className="section-title">🔥 Sản phẩm đang Sale</h2>
         <div className="product-grid">
@@ -119,7 +114,6 @@ function Home() {
               </div>
             ))
           ) : (
-            // Placeholder nếu chưa có dữ liệu
             [1, 2, 3, 4].map((i) => (
               <div key={i} className="product-card">
                 <div className="sale-badge">SALE</div>
@@ -135,7 +129,6 @@ function Home() {
         </div>
       </section>
 
-      {/* VỀ CHÚNG TÔI */}
       <footer className="about-section">
         <h3>Về chúng tôi</h3>
         <p>
