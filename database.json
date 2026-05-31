@@ -273,6 +273,29 @@
       "status": "pending",
       "orderDate": "2026-05-20T09:27:02.114Z",
       "id": 1
+    },
+    {
+      "userId": 2,
+      "customerName": "hiếu",
+      "customerPhone": "12345678",
+      "customerAddress": "hà nội",
+      "paymentMethod": "COD",
+      "items": [
+        {
+          "id": 25,
+          "name": "Khăn giấy khô Bless You",
+          "category": "Hóa mỹ phẩm",
+          "description": "Khăn giấy lụa mềm mại, không gây kích ứng da, thấm hút tốt.",
+          "price": 20000,
+          "sales": 950,
+          "image": "/images/khan-softpack.jpg",
+          "quantity": 2
+        }
+      ],
+      "total": 40000,
+      "status": "pending",
+      "orderDate": "2026-05-23T08:38:15.271Z",
+      "id": 2
     }
   ]
 }

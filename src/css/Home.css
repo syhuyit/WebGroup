@@ -1,3 +1,43 @@
+/* ===== CONTAINER ===== */
+.home-container {
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* ===== BANNER ===== */
+.banner {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  letter-spacing: 2px;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=1400') center/cover no-repeat;
+}
+
+/* ===== SLOGAN ===== */
+.slogan-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+}
+
+.slogan-section h2 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.slogan-section p {
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* ===== NÚT MUA NGAY ===== */
 .btn-buy {
   background: #000000;
   color: white;
@@ -6,8 +46,205 @@
   border-radius: 10px;
   cursor: pointer;
   margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s;
 }
+
 .btn-buy:hover {
   background: #d4af37;
   color: black;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* ===== VOUCHER ===== */
+.voucher-section {
+  padding: 36px 24px;
+  background: #fafafa;
+}
+
+.voucher-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.voucher-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+}
+
+.voucher-card:hover {
+  transform: translateY(-2px);
+}
+
+.voucher-emoji {
+  font-size: 2rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.voucher-info {
+  flex: 1;
+}
+
+.voucher-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.voucher-desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+.voucher-btn {
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.voucher-btn:hover {
+  opacity: 0.85;
+}
+
+/* ===== SẢN PHẨM SALE ===== */
+.sale-section {
+  padding: 36px 24px;
+  background: #fff;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.product-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff6b6b;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.product-img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-img-placeholder {
+  font-size: 3rem;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+}
+
+.buy-btn {
+  background: #56B6C6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.2s;
+}
+
+.buy-btn:hover {
+  opacity: 0.85;
+}
+
+/* ===== VỀ CHÚNG TÔI ===== */
+.about-section {
+  background: #e8f7f8;
+  padding: 30px;
+  text-align: center;
+}
+
+.about-section h3 {
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .banner { font-size: 28px; height: 200px; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
 }
