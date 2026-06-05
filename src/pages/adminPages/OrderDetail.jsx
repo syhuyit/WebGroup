@@ -45,6 +45,19 @@ function OrderDetail() {
     }
   };
 
+  const handleCancel = async () => {
+    try {
+      if (window.confirm("Bạn có chắc chắn hủy đơn hàng không?")) {
+        await updateStatus(id, { ...order, status: "cancelled" });
+        navigate("/orders");
+        alert("Hủy đơn hàng thành công!");
+      }
+    } catch (error) {
+      console.error("Lỗi khi cập nhật trạng thái:", error);
+      alert("Có lỗi xảy ra, vui lòng thử lại.");
+    }
+  };
+
   if (loading) {
     return (
       <div className="bg-dark text-light min-vh-100 d-flex flex-column justify-content-center align-items-center">
@@ -135,7 +148,13 @@ function OrderDetail() {
                       Trạng thái đơn hàng
                     </strong>
                     <Badge
-                      bg={order.status === "pending" ? "warning" : "success"}
+                      bg={
+                        order.status === "pending"
+                          ? "warning"
+                          : order.status === "delivered"
+                            ? "success"
+                            : "danger"
+                      }
                       text={order.status === "pending" ? "dark" : "light"}
                       className="px-2 py-1.5 text-uppercase"
                     >
@@ -151,6 +170,15 @@ function OrderDetail() {
                     onClick={handleShipOrder}
                   >
                     Xác nhận giao hàng
+                  </Button>
+                )}
+                {order.status === "pending" && (
+                  <Button
+                    variant="danger"
+                    className="w-100 mt-4 fw-bold py-2 text-dark"
+                    onClick={handleCancel}
+                  >
+                    Hủy đơn hàng
                   </Button>
                 )}
               </Card.Body>

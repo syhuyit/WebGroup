@@ -83,7 +83,13 @@ function Orders() {
                   <td className="text-warning fw-semibold">{order.total}</td>
                   <td>
                     <Badge
-                      bg={order.status === "pending" ? "warning" : "success"}
+                      bg={
+                        order.status === "pending"
+                          ? "warning"
+                          : order.status === "delivered"
+                            ? "success"
+                            : "danger"
+                      }
                       text={order.status === "pending" ? "dark" : "light"}
                       className="px-2 py-1.5 text-uppercase fs-7"
                     >

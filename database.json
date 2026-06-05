@@ -231,7 +231,7 @@
       "category": "Hóa mỹ phẩm",
       "description": "Nước giặt hương hoa hồng, làm sạch hiệu quả và để lại mùi thơm dễ chịu.",
       "price": 150000,
-      "sales": 234,
+      "sales": 235,
       "image": "/images/nuoc-giat-ariel.jpg"
     }
   ],
@@ -429,6 +429,142 @@
       "status": "delivered",
       "orderDate": "2026-05-22T02:35:05.444Z",
       "id": 4
+    },
+    {
+      "userId": 3,
+      "customerName": "Nguyễn Sỹ Minh Khang",
+      "customerPhone": "0983723632",
+      "customerAddress": "Số 16, ngõ 72, đường Phù Lưu Tế",
+      "paymentMethod": "COD",
+      "items": [
+        {
+          "id": 2,
+          "name": "Nước ngọt Coca Cola 320ml",
+          "category": "Đồ uống",
+          "description": "Nước giải khát có gas hương vị sảng khoái, bùng nổ năng lượng.",
+          "price": 10000,
+          "sales": 320,
+          "image": "/images/coca.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 15,
+          "name": "Thạch trái cây New Choice",
+          "category": "Bánh kẹo",
+          "description": "Thạch rau câu nhiều hương vị trái cây, dai giòn thanh mát.",
+          "price": 25000,
+          "sales": 150,
+          "image": "/images/keo-thach-but-chi.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "name": "Nước khoáng La Vie 500ml",
+          "category": "Đồ uống",
+          "description": "Nước khoáng thiên nhiên, bổ sung khoáng chất thiết yếu cho cơ thể mỗi ngày.",
+          "price": 5000,
+          "sales": 150,
+          "image": "/images/lavie.jpg",
+          "quantity": 4
+        },
+        {
+          "id": 14,
+          "name": "Socola KitKat 4 thanh",
+          "category": "Bánh kẹo",
+          "description": "Bánh xốp giòn tan bao phủ lớp socola sữa ngọt ngào, nghỉ ngơi xơi KitKat.",
+          "price": "25000",
+          "sales": 370,
+          "image": "/images/socola-kit-kat.jpg",
+          "quantity": 6
+        },
+        {
+          "id": 19,
+          "name": "Phô mai lát Zott Sandwich",
+          "category": "Sữa & Chế phẩm",
+          "description": "Phô mai miếng mềm mịn, giàu dinh dưỡng cho bữa sáng.",
+          "price": 35000,
+          "sales": "181",
+          "image": "/images/pho-mai-lat.jpg",
+          "quantity": 3
+        }
+      ],
+      "total": 310000,
+      "status": "delivered",
+      "orderDate": "2026-05-29T04:15:46.896Z",
+      "id": 5
+    },
+    {
+      "userId": 3,
+      "customerName": "Nguyễn Sỹ Minh Khang",
+      "customerPhone": "0978947293",
+      "customerAddress": "Số 16, ngõ 72, đường Phù Lưu Tế, tp Hà Nội",
+      "paymentMethod": "COD",
+      "items": [
+        {
+          "id": 4,
+          "name": "Trà xanh Không Độ 455ml",
+          "category": "Đồ uống",
+          "description": "Chiết xuất từ lá trà tươi, giúp giải nhiệt và chống oxy hóa.",
+          "price": 9000,
+          "sales": 190,
+          "image": "/images/tra-xanh-khong-do.jpg",
+          "quantity": 4
+        },
+        {
+          "id": 6,
+          "name": "Mì Hảo hảo tôm chua cay",
+          "category": "Thực phẩm khô",
+          "description": "Mì ăn liền hương vị tôm chua cay huyền thoại, sợi mì dai ngon.",
+          "price": 4500,
+          "sales": 1200,
+          "image": "/images/my-haohao.jpg",
+          "quantity": 5
+        },
+        {
+          "id": 7,
+          "name": "Mì trộn Omachi Xốt Spaghetti",
+          "category": "Thực phẩm khô",
+          "description": "Mì khoai tây cao cấp kết hợp nước xốt bò bằm Spaghetti đậm đà phong cách Ý.",
+          "price": 8500,
+          "sales": 450,
+          "image": "/images/mitron-omachi.jpg",
+          "quantity": 7
+        },
+        {
+          "id": 11,
+          "name": "Snack khoai tây Lay's vị tự nhiên",
+          "category": "Bánh kẹo",
+          "description": "Lát khoai tây tươi chọn lọc, chiên vàng giòn rụm với vị muối biển.",
+          "price": 12000,
+          "sales": 600,
+          "image": "/images/snackkhoaitay.jpg",
+          "quantity": 6
+        },
+        {
+          "id": 22,
+          "name": "Kem đánh răng P/S bảo vệ 123",
+          "category": "Hóa mỹ phẩm",
+          "description": "Giúp ngăn ngừa sâu răng, làm trắng răng và giữ hơi thở thơm mát.",
+          "price": 32000,
+          "sales": 650,
+          "image": "/images/kem-danh-rang.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 21,
+          "name": "Dầu gội Clear bạc hà 350g",
+          "category": "Hóa mỹ phẩm",
+          "description": "Dầu gội sạch gàu với tinh chất bạc hà, mang lại cảm giác mát lạnh.",
+          "price": 55000,
+          "sales": 400,
+          "image": "/images/dau-goi-clear.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 277000,
+      "status": "cancelled",
+      "orderDate": "2026-05-29T04:18:12.678Z",
+      "id": 6
     }
   ]
 }
