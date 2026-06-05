@@ -1,65 +1,143 @@
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../css/Home.css";
 
 function Home() {
   const navigate = useNavigate();
+  const [saleProducts, setSaleProducts] = useState([]);
+
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("http://localhost:9999/products");
+        const data = await response.json();
+        const sorted = data.sort((a, b) => b.sales - a.sales).slice(0, 4);
+        setSaleProducts(sorted);
+      } catch (error) {
+        console.error("Lỗi khi fetch sản phẩm:", error);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  const vouchers = [
+    {
+      id: 1,
+      emoji: "🎁",
+      title: "Giảm 10K",
+      desc: "Cho đơn từ 100K",
+      color: "#ff6b6b",
+      bg: "#fff5f5",
+    },
+    {
+      id: 2,
+      emoji: "🚚",
+      title: "Freeship",
+      desc: "Cho đơn từ 200K",
+      color: "#56B6C6",
+      bg: "#f0fbfc",
+    },
+    {
+      id: 3,
+      emoji: "💎",
+      title: "Giảm 5%",
+      desc: "Cho thành viên VIP",
+      color: "#a855f7",
+      bg: "#faf5ff",
+    },
+  ];
+
   return (
-    <div>
-      {/* Banner */}
-      <div
-        style={{
-          height: "300px",
-          background:
-            "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1400') center/cover no-repeat",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "white",
-          fontSize: "45px",
-          fontWeight: "bold",
-          textShadow: "2px 2px 8px rgba(0,0,0,0.6)",
-          letterSpacing: "2px",
-        }}
-      >
+    <div className="home-container">
+
+      <div className="banner">
         🛒 Tạp Hóa Nhà Mình
       </div>
 
-      {/* Slogan */}
-      <div
-        style={{
-          textAlign: "center",
-          padding: "40px 20px",
-          background: "#ffffff",
-          animation: "fadeIn 1s ease-in",
-        }}
-      >
+      <div className="slogan-section">
         <h2>Tiện lợi mỗi ngày</h2>
-        <p>
-          Mua sắm hàng tạp hóa thiết yếu với giá cả phải chăng, giao hàng nhanh
-          chóng
-        </p>
-        <button onClick={() => navigate("/menu")} className="btn-buy">
+        <p>Mua sắm hàng tạp hóa thiết yếu với giá cả phải chăng, giao hàng nhanh chóng</p>
+        <button className="btn-buy" onClick={() => navigate("/menu")}>
           Mua ngay
         </button>
       </div>
 
-      {/* Giới thiệu */}
-      <div
-        style={{
-          background: "#e8f7f8",
-          padding: "30px",
-          textAlign: "center",
-        }}
-      >
+      <section className="voucher-section">
+        <h2 className="section-title">🎁 Voucher Ưu Đãi</h2>
+        <div className="voucher-list">
+          {vouchers.map((v) => (
+            <div
+              key={v.id}
+              className="voucher-card"
+              style={{ backgroundColor: v.bg, borderLeft: `5px solid ${v.color}` }}
+            >
+              <div className="voucher-emoji">{v.emoji}</div>
+              <div className="voucher-info">
+                <p className="voucher-title" style={{ color: v.color }}>{v.title}</p>
+                <p className="voucher-desc">{v.desc}</p>
+              </div>
+              <button
+                className="voucher-btn"
+                style={{ backgroundColor: v.color }}
+              >
+                Dùng ngay
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="sale-section">
+        <h2 className="section-title">🔥 Sản phẩm đang Sale</h2>
+        <div className="product-grid">
+          {saleProducts.length > 0 ? (
+            saleProducts.map((product) => (
+              <div key={product.id} className="product-card">
+                <div className="sale-badge">SALE</div>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="product-img"
+                  onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
+                />
+                <p className="product-name">{product.name}</p>
+                <p className="product-price">
+                  {product.price.toLocaleString()}đ
+                </p>
+                <button
+                  className="buy-btn"
+                  onClick={() => navigate("/menu")}
+                >
+                  Mua ngay
+                </button>
+              </div>
+            ))
+          ) : (
+            [1, 2, 3, 4].map((i) => (
+              <div key={i} className="product-card">
+                <div className="sale-badge">SALE</div>
+                <div className="product-img-placeholder">🛍️</div>
+                <p className="product-name">Sản phẩm hot</p>
+                <p className="product-price">---đ</p>
+                <button className="buy-btn" onClick={() => navigate("/menu")}>
+                  Mua ngay
+                </button>
+              </div>
+            ))
+          )}
+        </div>
+      </section>
+
+      <footer className="about-section">
         <h3>Về chúng tôi</h3>
         <p>
-          Tạp Hóa Nhà Mình — nơi bạn tìm thấy mọi thứ cần thiết cho cuộc sống
-          hàng ngày. Từ nước giải khát, mì tôm, bánh kẹo đến gia vị và thực phẩm
-          thiết yếu, tất cả đều được chọn lọc kỹ càng với chất lượng đảm bảo và
-          giá cả phải chăng. Mua sắm dễ dàng, giao hàng nhanh chóng — chúng tôi
-          luôn ở đây để phục vụ bạn mỗi ngày! 🛒
+          Tạp Hóa Nhà Mình cung cấp đầy đủ các mặt hàng thiết yếu từ nước
+          giải khát, mì tôm, bánh kẹo đến gia vị — chất lượng đảm bảo, giá
+          cả phải chăng, phù hợp cho mọi gia đình. 🛒
         </p>
-      </div>
+      </footer>
+
     </div>
   );
 }
