@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/userPages/Home";
 import Menu from "./pages/userPages/Menu";
+import ProductDetail from "./pages/userPages/ProductDetail";
 import Checkout from "./pages/userPages/Checkout";
 import AddProduct from "./pages/adminPages/AddProduct";
 import UpdateProduct from "./pages/adminPages/UpdateProduct";
@@ -16,7 +17,6 @@ import Register from "./pages/Register";
 import Orders from "./pages/adminPages/Orders";
 import OrderDetail from "./pages/adminPages/OrderDetail";
 import AdminNavbar from "./components/AdminNavbar";
-import ProductDetail from "./pages/userPages/ProductDetail";
 import Users from "./pages/adminPages/Users";
 
 function AppContent() {
@@ -47,6 +47,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <Menu />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/product/:id"
+          element={
+            <ProtectedRoute>
+              <ProductDetail />
             </ProtectedRoute>
           }
         />
